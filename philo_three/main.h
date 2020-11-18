@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:08:26 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 09:39:13 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 09:47:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct	s_params
 	sem_t			*sem_both_forks;
 	pid_t			*child_pids;
 	pid_t			pid;
-	int				status;	
+	int				status;
 }				t_params;
 
 typedef struct	s_philosopher
@@ -72,7 +72,7 @@ typedef struct	s_philosopher
 	int				num;
 	int				num_of_eat;
 	struct timeval	start_time_to_eat;
-	int				exit_code;	
+	int				exit_code;
 	t_params		*params;
 }				t_philosopher;
 
