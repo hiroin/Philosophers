@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:08:26 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 07:07:25 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 08:20:10 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 # define SEMNAME_FORK "philo_two_fork"
 # define SEMNAME_DIED "philo_two_died"
 # define SEMNAME_PARAMS "philo_two_params"
-# define SEMNAME_EXIT "philo_two_params"
+# define SEMNAME_EXIT "philo_two_exit"
 
 typedef struct	s_params
 {
@@ -95,5 +95,6 @@ void			work_start(t_philosopher *phs);
 void			work_end(t_philosopher *phs);
 void			work_eat(t_philosopher *phs);
 void			free_memory_and_close_sem(t_params *params);
+bool			allocation_memory_and_open_sem(t_params *params);
 
 #endif

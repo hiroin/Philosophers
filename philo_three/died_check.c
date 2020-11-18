@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 07:45:53 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 08:04:54 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static void		*died_check_loop(t_philosopher *phs)
 			sem_wait(phs->params->sem_exit_code);
 			phs->exit_code = EXIT_DIED;
 			sem_post(phs->params->sem_exit_code);
-			printf("EXIT_DIED OK\n");
 			return (NULL);
 		}
 		sem_wait(phs->params->sem_params);

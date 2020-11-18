@@ -6,7 +6,7 @@
 #    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/20 19:50:14 by hkamiya           #+#    #+#              #
-#    Updated: 2020/11/18 06:57:57 by user42           ###   ########.fr        #
+#    Updated: 2020/11/18 08:24:41 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS	= convert_to_milliseconds.c \
 		  work.c \
 		  work2.c \
 		  work_eat.c \
-		  free_memory_and_close_sem.c
+		  free_memory_and_close_sem.c \
+		  allocation_memory_and_open_sem.c
 OBJS	= $(SRCS:.c=.o)
 UNAME	:= $(shell uname)
 ifeq ($(UNAME), Linux)
