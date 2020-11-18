@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_memory_and_close_sem.c                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 06:17:36 by user42           ###   ########.fr       */
+/*   Created: 2020/11/02 06:34:03 by user42            #+#    #+#             */
+/*   Updated: 2020/11/05 02:07:24 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-void		free_memory_and_close_sem(
-				t_params *params,
-				t_philosopher *phs,
-				pthread_t *threads,
-				pthread_t *died_check_thread)
+size_t		ft_strlen(const char *str)
 {
-	free(phs);
-	free(threads);
-	free(died_check_thread);
-	sem_close(params->sem_forks);
-	sem_close(params->sem_died);
-	sem_close(params->sem_params);
+	int i;
+
+	i = 0;
+	while (*str)
+	{
+		i++;
+		str++;
+	}
+	return (i);
 }

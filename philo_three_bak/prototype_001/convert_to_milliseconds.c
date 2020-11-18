@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_memory_and_close_sem.c                        :+:      :+:    :+:   */
+/*   convert_to_milliseconds.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 06:17:36 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/02 07:03:57 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-void		free_memory_and_close_sem(
-				t_params *params,
-				t_philosopher *phs,
-				pthread_t *threads,
-				pthread_t *died_check_thread)
+/*
+** 時刻の構造体をミリ秒で返す関数
+*/
+
+long	convert_to_milliseconds(struct timeval time)
 {
-	free(phs);
-	free(threads);
-	free(died_check_thread);
-	sem_close(params->sem_forks);
-	sem_close(params->sem_died);
-	sem_close(params->sem_params);
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }

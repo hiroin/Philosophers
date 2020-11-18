@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 03:00:44 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 05:59:52 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ static int		start_simulation(t_params *params)
 		return (ERROR);
 	if (threads_join(params, threads, died_check_thread))
 		return (ERROR);
-	i = 0;
 	free_memory_and_close_sem(params, phs, threads, died_check_thread);
 	return (SUCCESS);
 }

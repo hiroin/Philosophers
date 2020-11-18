@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_memory_and_close_sem.c                        :+:      :+:    :+:   */
+/*   init_t_philosopher.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 06:17:36 by user42           ###   ########.fr       */
+/*   Created: 2020/11/03 07:19:12 by user42            #+#    #+#             */
+/*   Updated: 2020/11/18 05:58:30 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-void		free_memory_and_close_sem(
-				t_params *params,
-				t_philosopher *phs,
-				pthread_t *threads,
-				pthread_t *died_check_thread)
+int				init_t_philosopher(
+	t_philosopher *philosopher,
+	unsigned num,
+	t_params *params)
 {
-	free(phs);
-	free(threads);
-	free(died_check_thread);
-	sem_close(params->sem_forks);
-	sem_close(params->sem_died);
-	sem_close(params->sem_params);
+	philosopher->num = num;
+	philosopher->num_of_eat = 0;
+	philosopher->exit_code = -1;
+	philosopher->params = params;
+	return (SUCCESS);
 }

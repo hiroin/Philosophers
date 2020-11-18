@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_memory_and_close_sem.c                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 06:17:36 by user42           ###   ########.fr       */
+/*   Created: 2020/11/02 06:32:39 by user42            #+#    #+#             */
+/*   Updated: 2020/11/05 02:07:53 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-void		free_memory_and_close_sem(
-				t_params *params,
-				t_philosopher *phs,
-				pthread_t *threads,
-				pthread_t *died_check_thread)
+void	ft_putstr(char *s)
 {
-	free(phs);
-	free(threads);
-	free(died_check_thread);
-	sem_close(params->sem_forks);
-	sem_close(params->sem_died);
-	sem_close(params->sem_params);
+	write(1, s, ft_strlen(s));
 }
