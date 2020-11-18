@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 08:19:56 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 09:37:28 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ int				main(int argc, char **argv)
 	sem_unlink(SEMNAME_DIED);
 	sem_unlink(SEMNAME_PARAMS);
 	sem_unlink(SEMNAME_EXIT);
+	sem_unlink(SEMNAME_BOTH_FORKS);
 	if (!(argc >= 5 && argc <= 6))
 		return (ERROR);
 	if (validate_argv(argc, argv))
@@ -119,5 +120,6 @@ int				main(int argc, char **argv)
 	sem_unlink(SEMNAME_DIED);
 	sem_unlink(SEMNAME_PARAMS);
 	sem_unlink(SEMNAME_EXIT);
+	sem_unlink(SEMNAME_BOTH_FORKS);
 	return (SUCCESS);
 }

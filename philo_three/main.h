@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:08:26 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 08:20:10 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 09:39:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@
 # define SEMNAME_DIED "philo_two_died"
 # define SEMNAME_PARAMS "philo_two_params"
 # define SEMNAME_EXIT "philo_two_exit"
+# define SEMNAME_BOTH_FORKS "philo_two_both_forks"
 
 typedef struct	s_params
 {
@@ -60,6 +61,7 @@ typedef struct	s_params
 	sem_t			*sem_died;
 	sem_t			*sem_params;
 	sem_t			*sem_exit_code;
+	sem_t			*sem_both_forks;
 	pid_t			*child_pids;
 	pid_t			pid;
 	int				status;	

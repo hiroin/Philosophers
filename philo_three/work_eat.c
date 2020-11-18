@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 02:37:12 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 09:40:18 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ void		work_eat(t_philosopher *phs)
 {
 	struct timeval	now;
 
+	sem_wait(phs->params->sem_both_forks);
 	sem_wait(phs->params->sem_forks);
 	gettimeofday(&now, NULL);
 	write_message(convert_to_milliseconds(now), FORK, phs);
 	sem_wait(phs->params->sem_forks);
+	sem_post(phs->params->sem_both_forks);
 	sem_wait(phs->params->sem_params);
 	gettimeofday(&now, NULL);
 	phs->start_time_to_eat = now;

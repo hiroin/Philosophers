@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 08:20:01 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 09:39:21 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ bool		allocation_memory_and_open_sem(t_params *params)
 		return (ERROR);
 	if ((params->sem_exit_code = sem_open(\
 			SEMNAME_EXIT, O_CREAT, 0600, 1)) == SEM_FAILED)
+		return (ERROR);
+	if ((params->sem_both_forks = sem_open(\
+			SEMNAME_BOTH_FORKS, O_CREAT, 0600, 1)) == SEM_FAILED)
 		return (ERROR);
 	return (SUCCESS);
 }
