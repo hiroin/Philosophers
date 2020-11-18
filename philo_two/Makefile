@@ -6,7 +6,7 @@
 #    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/20 19:50:14 by hkamiya           #+#    #+#              #
-#    Updated: 2020/11/18 02:54:44 by user42           ###   ########.fr        #
+#    Updated: 2020/11/18 10:21:53 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,7 @@ CC		= gcc
 endif
 RM		= rm -f
 #CFLAGS	= -g -Wall -Wextra -Werror -fsanitize=undefined,address
-#CFLAGS	= -g -Wall -Wextra -Werror
-CFLAGS	= -g
+CFLAGS	= -g -Wall -Wextra -Werror
 LIB		= -pthread
 NAME	= philo_two
 all: $(NAME)

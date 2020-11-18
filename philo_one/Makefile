@@ -6,7 +6,7 @@
 #    By: user42 <user42@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/20 19:50:14 by hkamiya           #+#    #+#              #
-#    Updated: 2020/11/18 01:37:52 by user42           ###   ########.fr        #
+#    Updated: 2020/11/18 10:21:33 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,8 @@ else
 CC		= gcc
 endif
 RM		= rm -f
-CFLAGS	= -g -Wall -Wextra -Werror -fsanitize=undefined,address
-#CFLAGS	= -g -Wall -Wextra -Werror
+#CFLAGS	= -g -Wall -Wextra -Werror -fsanitize=undefined,address
+CFLAGS	= -g -Wall -Wextra -Werror
 LIB		= -pthread
 NAME	= philo_one
 all: $(NAME)
