@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:35:09 by user42            #+#    #+#             */
-/*   Updated: 2020/11/18 10:27:09 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 10:30:50 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ long			diff_time(struct timeval end, struct timeval start)
 	diff_time = sec * 1000 + microsec;
 	return (diff_time);
 }
-
