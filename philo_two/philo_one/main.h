@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:08:26 by user42            #+#    #+#             */
-/*   Updated: 2020/11/19 03:31:58 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 01:25:30 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,9 @@
 # include <sys/time.h>
 # include <stdbool.h>
 # include <pthread.h>
-# include <semaphore.h>
-# include <fcntl.h>
-# include <signal.h>
-# include <sys/wait.h>
 
 # define SUCCESS 0
 # define ERROR 1
-
-# define EXIT_DIED 0
-# define EXIT_END 1
 
 # define FORK 0
 # define EAT 1
@@ -42,12 +35,6 @@
 # define MONITORSTART 7
 # define MONITORDIED 8
 
-# define SEMNAME_FORK "philo_three_fork"
-# define SEMNAME_DIED "philo_three_died"
-# define SEMNAME_PARAMS "philo_three_params"
-# define SEMNAME_EXIT "philo_three_exit"
-# define SEMNAME_BOTH_FORKS "philo_three_both_forks"
-
 typedef struct	s_params
 {
 	int				number_of_phs;
@@ -57,14 +44,9 @@ typedef struct	s_params
 	bool			flag_set_max_number_of_eat;
 	int				max_number_of_eat;
 	bool			someone_died;
-	sem_t			*sem_forks;
-	sem_t			*sem_died;
-	sem_t			*sem_params;
-	sem_t			*sem_exit_code;
-	sem_t			*sem_both_forks;
-	pid_t			*child_pids;
-	pid_t			pid;
-	int				status;
+	pthread_mutex_t m_died;
+	pthread_mutex_t m_params;
+	pthread_mutex_t *m_fork;
 }				t_params;
 
 typedef struct	s_philosopher
@@ -72,7 +54,6 @@ typedef struct	s_philosopher
 	int				num;
 	int				num_of_eat;
 	struct timeval	start_time_to_eat;
-	int				exit_code;
 	t_params		*params;
 }				t_philosopher;
 
@@ -96,7 +77,10 @@ void			*work(void *args);
 void			work_start(t_philosopher *phs);
 void			work_end(t_philosopher *phs);
 void			work_eat(t_philosopher *phs);
-void			free_memory_and_close_sem(t_params *params);
-bool			allocation_memory_and_open_sem(t_params *params);
+void			free_memory(
+					t_params *params,
+					t_philosopher *phs,
+					pthread_t *threads,
+					pthread_t *died_check_thread);
 
 #endif

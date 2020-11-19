@@ -6,7 +6,7 @@
 /*   By: user42 <user42@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 02:08:26 by user42            #+#    #+#             */
-/*   Updated: 2020/11/19 03:31:58 by user42           ###   ########.fr       */
+/*   Updated: 2020/11/18 09:47:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@
 # define MONITORSTART 7
 # define MONITORDIED 8
 
-# define SEMNAME_FORK "philo_three_fork"
-# define SEMNAME_DIED "philo_three_died"
-# define SEMNAME_PARAMS "philo_three_params"
-# define SEMNAME_EXIT "philo_three_exit"
-# define SEMNAME_BOTH_FORKS "philo_three_both_forks"
+# define SEMNAME_FORK "philo_two_fork"
+# define SEMNAME_DIED "philo_two_died"
+# define SEMNAME_PARAMS "philo_two_params"
+# define SEMNAME_EXIT "philo_two_exit"
+# define SEMNAME_BOTH_FORKS "philo_two_both_forks"
 
 typedef struct	s_params
 {
